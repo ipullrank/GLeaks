@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "GLeaks",
+  "version": "0.1",
+  "description": "Just a tool that expands the width of .sidebar and .full-list elements on specific HexDocs pages for the Google Leak.",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://hexdocs.pm/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/logo16.png",
+      "48": "icons/logo48.png",
+      "128": "icons/logo128.png"
+    }
+  }
+}
